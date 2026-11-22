@@ -2,12 +2,13 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './productDetails.css'
-import SlideProduct from '../../../component/slideProducts/slideProduct'
+
 import ProductDetailsLoading from './ProductDetailsLoading'
 import SlideProductLoading from '../../../component/slideProducts/SlideProductLoading'
 import ProductImages from './ProductImages'
 import ProductInfo from './ProductInfo'
 import PageTransition from '../../../component/PageTransition'
+import SlideProduct from '../../../component/slideProducts/SlideProduct'
 
 
 
