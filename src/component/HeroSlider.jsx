@@ -1,10 +1,13 @@
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { Link } from 'react-router-dom';
+
+import bannerHero1 from '../img/banner_Hero1.jpg';
+import bannerHero2 from '../img/banner_Hero2.jpg';
+import bannerHero3 from '../img/banner_Hero3.jpg';
 
 function HeroSlider() {
     return (
@@ -12,51 +15,49 @@ function HeroSlider() {
             <div className="hero">
                 <div className="container">
                     <Swiper
-                    loop={true}
-                            autoplay={{
-                                delay: 2500,
-                                disableOnInteraction: false,
-        }}
-                    pagination={true} modules={[Pagination, Autoplay]} className="mySwiper">
+                        loop={true}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={true}
+                        modules={[Pagination, Autoplay]}
+                        className="mySwiper"
+                    >
                         <SwiperSlide>
                             <div className="content">
                                 <h4>Introducing the new</h4>
-                                <h3>Microsoft Xbox  <br/> 360 Controller</h3>
+                                <h3>Microsoft Xbox <br /> 360 Controller</h3>
                                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
                                 <Link to="/" className='btn'>Shop Now</Link>
                             </div>
-                            <img src="/src/img/banner_Hero1.jpg" alt="slider hero one" />
+                            <img src={bannerHero1} alt="slider hero one" />
                         </SwiperSlide>
+
                         <SwiperSlide>
                             <div className="content">
                                 <h4>Introducing the new</h4>
-                                <h3>Microsoft Xbox  <br/> 360 Controller</h3>
+                                <h3>Microsoft Xbox <br /> 360 Controller</h3>
                                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
                                 <Link to="/" className='btn'>Shop Now</Link>
                             </div>
-                            <img src="/src/img/banner_Hero2.jpg" alt="slider hero two" />
+                            <img src={bannerHero2} alt="slider hero two" />
                         </SwiperSlide>
+
                         <SwiperSlide>
                             <div className="content">
                                 <h4>Introducing the new</h4>
-                                <h3>Microsoft Xbox  <br/> 360 Controller</h3>
+                                <h3>Microsoft Xbox <br /> 360 Controller</h3>
                                 <p>Windows Xp/10/7/8 Ps3, Tv Box</p>
                                 <Link to="/" className='btn'>Shop Now</Link>
                             </div>
-                            <img src="/src/img/banner_Hero3.jpg" alt="slider hero three" />
+                            <img src={bannerHero3} alt="slider hero three" />
                         </SwiperSlide>
                     </Swiper>
                 </div>
             </div>
-
-
-
-
-
-
-
         </>
-    )
+    );
 }
 
-export default HeroSlider
+export default HeroSlider;
