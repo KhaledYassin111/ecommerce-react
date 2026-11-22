@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { CartContext } from '../../../component/context/CartContext'
 import { FaTrashAlt } from "react-icons/fa";
 import './Cart.css'

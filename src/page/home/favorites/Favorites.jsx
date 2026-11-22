@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { CartContext } from '../../../component/context/CartContext'
 import PageTransition from '../../../component/PageTransition'
 import Product from '../../../component/slideProducts/Product'

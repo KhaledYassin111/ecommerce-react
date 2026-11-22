@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../../img/logo2.png'
 import { CiHeart } from "react-icons/ci";

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { FaRegHeart, FaShare, FaStar, FaStarHalfAlt } from 'react-icons/fa'
 import { TiShoppingCart } from 'react-icons/ti'
 import { CartContext } from '../../../component/context/CartContext'

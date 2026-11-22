@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import HeroSlider from "../../component/HeroSlider"
 import './home.css'
-import SlideProduct from "../../component/slideProducts/SlideProduct"
+import slideProduct from "../../component/slideProducts/slideProduct"
 import axios from "axios"
 import SlideProductLoading from "../../component/slideProducts/SlideProductLoading"
 import PageTransition from "../../component/PageTransition"
