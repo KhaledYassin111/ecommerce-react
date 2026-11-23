@@ -22,9 +22,11 @@ function BtmHeader() {
     const { user, logout } = useAuth()
     const[categories,setCategories]= useState([])
     const[isCOPn,setIsCOPn]=useState(false)
+    const[isPagesOpen,setIsPagesOpen]=useState(false)
 
 useEffect(()=>{
     setIsCOPn(false)
+    setIsPagesOpen(false)
 },[location])
 
     useEffect(()=>{
@@ -57,11 +59,25 @@ useEffect(()=>{
                     </div>
                 </div>
 
-                <div className="nav_links">
+                <button
+                    type="button"
+                    className="mobile_nav_toggle"
+                    onClick={() => setIsPagesOpen(!isPagesOpen)}
+                    aria-expanded={isPagesOpen}
+                    aria-label="Toggle pages menu"
+                >
+                    <IoMdMenu />
+                    <span>Pages</span>
+                    <IoMdArrowDropdown />
+                </button>
+
+                <ul className={`nav_links ${isPagesOpen ? "mobile_open" : ""}`}>
                     {NavLinks.map((item) => (
-                        <li key={item.link} className={location.pathname === item.link ? "active" : ""} ><Link to={item.link}>{item.title}</Link></li>
+                        <li key={item.link} className={location.pathname === item.link ? "active" : ""}>
+                            <Link to={item.link}>{item.title}</Link>
+                        </li>
                     ))}
-                </div>
+                </ul>
 
 
 </nav>

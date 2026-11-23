@@ -149,6 +149,9 @@ header{
 
 }
 .btm_header .nav_links{
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     height: 100%;
 }
@@ -204,3 +207,117 @@ border: 1px solid var(--border_color);
 
 .nav_auth_button{background:transparent;color:#fff;font-size:14px;font-weight:700;cursor:pointer;padding:7px 0}
 .nav_user_name{color:#fff;font-size:12px;max-width:105px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+
+/* Mobile pages navigation */
+.mobile_nav_toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.12);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.mobile_nav_toggle svg {
+    color: #fff;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .btm_header {
+        position: relative;
+    }
+    .btm_header .container {
+        min-height: 50px;
+        gap: 8px;
+    }
+    .btm_header .nav {
+        flex: 1;
+        min-width: 0;
+        height: 50px;
+        gap: 10px;
+    }
+    .btm_header .category_nav {
+        width: auto;
+        min-width: 0;
+        flex: 1;
+        max-width: 190px;
+    }
+    .btm_header .category_nav .category_btn {
+        padding: 0 9px;
+        gap: 7px;
+    }
+    .btm_header .category_nav .category_btn p {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+    .mobile_nav_toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+    .btm_header .nav_links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        background: #fff;
+        border: 1px solid var(--border_color);
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        z-index: 100001;
+        overflow: hidden;
+    }
+    .btm_header .nav_links.mobile_open {
+        display: flex;
+    }
+    .btm_header .nav_links li {
+        min-height: 44px;
+        height: auto;
+        padding: 0 16px;
+        border-bottom: 1px solid var(--border_color);
+    }
+    .btm_header .nav_links li:last-child {
+        border-bottom: 0;
+    }
+    .btm_header .nav_links li a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 44px;
+        color: var(--color_heading);
+        font-size: 14px;
+    }
+    .btm_header .nav_links li.active {
+        background: #eaf6ff;
+    }
+    .btm_header .nav_links li.active a {
+        color: var(--main_color);
+        font-weight: 700;
+    }
+    .btm_header .sign_regs_icon {
+        flex-shrink: 0;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .btm_header .category_nav {
+        max-width: 150px;
+    }
+    .btm_header .category_nav .category_btn p {
+        font-size: 11px;
+    }
+    .mobile_nav_toggle {
+        padding: 0 9px;
+    }
+}
