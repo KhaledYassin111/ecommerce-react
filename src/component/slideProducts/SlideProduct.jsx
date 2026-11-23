@@ -1,57 +1,49 @@
-
 import Product from './Product'
 import './SlideProduct.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
-import { Autoplay} from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
-
-
-
-
-
-function slideProduct({data, title}) {
+function SlideProduct({ data = [], title }) {
     return (
-    <div className='slide_products slide'>
-        <div className="container">
-            <div className="top_slide">
-                <h2>{title}</h2>
+        <div className='slide_products slide'>
+            <div className="container">
+                <div className="top_slide">
+                    <h2>{title}</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                </div>
 
-
-                
+                <Swiper
+                    loop={data.length > 5}
+                    autoplay={{
+                        delay: 4500,
+                        disableOnInteraction: false,
+                    }}
+                    slidesPerView={1.15}
+                    spaceBetween={14}
+                    breakpoints={{
+                        480: { slidesPerView: 1.5, spaceBetween: 16 },
+                        640: { slidesPerView: 2, spaceBetween: 18 },
+                        768: { slidesPerView: 3, spaceBetween: 20 },
+                        1024: { slidesPerView: 4, spaceBetween: 20 },
+                        1280: { slidesPerView: 5, spaceBetween: 20 },
+                    }}
+                    navigation={true}
+                    modules={[Navigation, Autoplay]}
+                    className="mySwiper"
+                >
+                    {data.map((item) => (
+                        <SwiperSlide key={item.id}>
+                            <Product item={item} />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
-        <Swiper
-        loop={true}
-        autoplay={{
-        delay: 4500,
-        disableOnInteraction: false,
-        }}
-        slidesPerView={5} navigation={true} modules={[Navigation, Autoplay]} className="mySwiper">
-
-            {data.map((item)=>{
-                return(
-
-                    <SwiperSlide><Product item={item} /></SwiperSlide>
-                )
-            })}
-
-            
-
-
-        </Swiper>
-
-
-            
         </div>
-
-
-
-
-        
-    </div>
     )
 }
 
-export default slideProduct
+export default SlideProduct
