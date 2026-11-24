@@ -29,6 +29,27 @@ useEffect(()=>{
     setIsPagesOpen(false)
 },[location])
 
+
+    // Close an open dropdown when the user clicks outside it.
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (isCOPn && !event.target.closest(".category_nav")) {
+                setIsCOPn(false);
+            }
+
+            if (
+                isPagesOpen &&
+                !event.target.closest(".nav_links") &&
+                !event.target.closest(".mobile_nav_toggle")
+            ) {
+                setIsPagesOpen(false);
+            }
+        };
+
+        document.addEventListener("pointerdown", handleOutsideClick);
+        return () => document.removeEventListener("pointerdown", handleOutsideClick);
+    }, [isCOPn, isPagesOpen]);
+
     useEffect(()=>{
         fetch('https://dummyjson.com/products/categories')
         .then(res => res.json())
