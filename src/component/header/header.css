@@ -261,24 +261,31 @@ border: 1px solid var(--border_color);
         display: inline-flex;
         flex-shrink: 0;
     }
-    .btm_header .nav_links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 5%;
-        right: 5%;
-        width: 90%;
-        height: auto;
-        flex-direction: column;
-        background: #fff;
-        border: 1px solid var(--border_color);
-        border-radius: 0 0 10px 10px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        z-index: 100001;
-        overflow: hidden;
+.btm_header .nav_links {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border_color);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    z-index: 100001;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    opacity: 0;
+    pointer-events: none;
+    transition: clip-path 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
     }
-    .btm_header .nav_links.mobile_open {
-        display: flex;
+.btm_header .nav_links.mobile_open {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+    pointer-events: auto;
     }
     .btm_header .nav_links li {
         min-height: 44px;
