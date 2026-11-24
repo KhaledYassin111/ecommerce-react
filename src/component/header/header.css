@@ -303,6 +303,7 @@ border: 1px solid var(--border_color);
         min-height: 44px;
         color: var(--color_heading);
         font-size: 14px;
+        
     }
     .btm_header .nav_links li.active {
         background: #eaf6ff;
@@ -315,6 +316,9 @@ border: 1px solid var(--border_color);
         flex-shrink: 0;
         gap: 12px;
     }
+    .mobile_nav_toggle span {
+    color: #dfe4e7;
+}
 }
 
 @media (max-width: 380px) {

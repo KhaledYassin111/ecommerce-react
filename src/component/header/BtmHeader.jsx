@@ -88,7 +88,7 @@ useEffect(()=>{
                     aria-label="Toggle pages menu"
                 >
                     <IoMdMenu />
-                    <span>Pages</span>
+                    <span>menu</span>
                     <IoMdArrowDropdown />
                 </button>
 
